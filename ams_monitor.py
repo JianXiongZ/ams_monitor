@@ -6,19 +6,15 @@ from io import StringIO
 import csv
 import urllib.request
 import matplotlib.pyplot as plt
-import numpy as np
 from datetime import datetime
 import matplotlib
 
 x = []
 y = []
-time = []
 info = []
-Display_count = 144
 
 
 def request_data(farm, count, title):
-    y_point = 0
     url = "http://192.168.1.200:8888/miao/" + quote(farm) + ".csv"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 
