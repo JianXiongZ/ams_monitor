@@ -42,8 +42,10 @@ def request_data(farm, count):
     plt.plot(x, y)
     plt.gcf().autofmt_xdate()
     plt.title(farm + ' Latest time:' + info[-1][0])
-    plt.savefig('./images/' + count + '.png')
-
+    figgg = plt.gcf()
+    figgg.set_size_inches(20.5, 10.5)
+    plt.savefig('./images/' + count + '.png', dpi=100)
+    plt.show()
 
 if __name__ == '__main__':
     Parameter = [('老安统', '1'), ('统子河', '2'), ('广元_1网段', '3'), ('芒市', '4'), ('木里', '5'), ('广元_3网段', '6'), ('广元_4网段', '7')]
