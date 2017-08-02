@@ -43,7 +43,7 @@ def request_data(farm, count):
     plt.gcf().autofmt_xdate()
     plt.title(farm + ' Latest time:' + info[-1][0])
     figgg = plt.gcf()
-    figgg.set_size_inches(20.5, 10.5)
+    figgg.set_size_inches(13.5, 6.5)
     plt.savefig('./images/' + count + '.png', dpi=100)
 
 if __name__ == '__main__':
