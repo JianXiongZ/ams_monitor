@@ -17,7 +17,7 @@ info = []
 Display_count = 144
 
 
-def request_data(farm, count, title):
+def request_data(farm, count):
     url = "http://192.168.1.200:8888/miao/" + quote(farm) + ".csv"
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
 
@@ -41,12 +41,12 @@ def request_data(farm, count, title):
     plt.xlabel("Time")
     plt.plot(x, y)
     plt.gcf().autofmt_xdate()
-    plt.title(title + ' Latest time:' + info[-1][0])
+    plt.title(farm + ' Latest time:' + info[-1][0])
     figgg = plt.gcf()
     figgg.set_size_inches(13.5, 6.5)
     plt.savefig('./images/' + count + '.png', dpi=100)
 
 if __name__ == '__main__':
-    Parameter = [('老安统', '1', 'Laoantong'), ('统子河', '2', 'Tongzihe'), ('广元_1网段', '3', 'Guangyuan_1'), ('芒市', '4', 'Mangshi'), ('木里', '5', 'Muli'), ('广元_3网段', '6', 'Guangyuan_3'), ('广元_4网段', '7', 'Guangyuan_4')]
+    Parameter = [('老安统', '1'), ('统子河', '2'), ('广元_1网段', '3'), ('芒市', '4'), ('木里', '5'), ('广元_3网段', '6'), ('广元_4网段', '7')]
     for data in Parameter:
-        request_data(data[0], data[1], data[2])
+        request_data(data[0], data[1])
