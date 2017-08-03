@@ -15,9 +15,21 @@ apt-get install python3-pandas
 
 #### Configuration
 * Modify matplotlib config file `/etc/matplotlibrc` to display chinese
-* ```find font.family and font.sans-serif that delete notation, add chinese font SimHei at the top of font.sans-serif```
+
+    ```
+        find font.family and font.sans-serif that delete notation, add chinese font SimHei at the top of font.sans-serif
+ 
+    ```
 * SimHei download link:
-* ```http://fontzone.net/download/simhei```
+    
+    ```
+        http://fontzone.net/download/simhei
+
+    ```
 
 * Add simhei.ttf to path
-* ```/usr/share/matplotlib/mpl-data/fonts/ttf/``` 
+
+    ```
+        /usr/share/matplotlib/mpl-data/fonts/ttf/
+    
+    ``` 
