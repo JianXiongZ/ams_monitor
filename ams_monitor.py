@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 import pandas as pd
 import matplotlib.dates as mdates
+import matplotlib.font_manager as fm
 
 x = []
 y = []
@@ -41,7 +42,8 @@ def request_data(farm, count):
     plt.xlabel("Time")
     plt.plot(x, y)
     plt.gcf().autofmt_xdate()
-    plt.title(farm + ' Latest time:' + info[-1][0])
+    prop = fm.FontProperties(fname='/usr/share/fonts/truetype/wqy.ttf')
+    ax.set_title(farm + ' Latest time:' + info[-1][0], fontproperties=prop)
     figgg = plt.gcf()
     figgg.set_size_inches(13.5, 6.5)
     plt.savefig('./images/' + count + '.png', dpi=100)
