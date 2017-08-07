@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 # encoding: utf-8
+import matplotlib
+matplotlib.use('Agg')
 from urllib.request import urlopen
 from urllib.parse import quote
 from io import StringIO
