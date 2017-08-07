@@ -6,6 +6,7 @@ from io import StringIO
 import csv
 import urllib.request
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as font_manager
 from datetime import datetime
 import pandas as pd
 import matplotlib.dates as mdates
@@ -32,6 +33,7 @@ def request_data(farm, count):
 
     x = [datetime.strptime(d[0], '%Y-%m-%d %H:%M:%S') for d in info[-Display_count::]]
     y = [d[1] for d in info[-Display_count::]]
+    myFont = font_manager.FontProperties(fname='/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc')
     myFmt = mdates.DateFormatter('%m/%d %H:00:00')
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
@@ -42,8 +44,7 @@ def request_data(farm, count):
     plt.xlabel("Time")
     plt.plot(x, y)
     plt.gcf().autofmt_xdate()
-    prop = fm.FontProperties(fname='/usr/share/fonts/truetype/wqy.ttf')
-    ax.set_title(farm + ' Latest time:' + info[-1][0], fontproperties=prop)
+    plt.title(farm + ' Latest time:' + info[-1][0], fontproperties=myFont)
     figgg = plt.gcf()
     figgg.set_size_inches(13.5, 6.5)
     plt.savefig('./images/' + count + '.png', dpi=100)
